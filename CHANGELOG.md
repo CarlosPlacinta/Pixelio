@@ -24,8 +24,8 @@ Times below use **Europe/London (BST, UTC+1)**. Time ranges generally run from t
 | 1.2.4 | 9 September 2026 | Prioritize requested scans and gradually recover price pacing | Installed locally; not published |
 | 1.2.5 | 9 September 2026 | Recover connection setup without repeating a successful installation | Installed locally; not published |
 | 1.2.6 | 11 September 2026 | Persistent price estimates, shared observations and artwork history index | Installed locally; not published |
-| 1.2.7 | 11 September 2026 | NFT and BC/CA tags, category filters and ordering | Source complete; packaging blocked |
-| 1.2.8 | 11 September 2026 | Windows installer support and recurring update notifications | Source and isolated installer tested; app packaging blocked |
+| 1.2.7 | 11 September 2026 | NFT and BC/CA tags, category filters and ordering | Included in 1.2.8 |
+| 1.2.8 | 11 September 2026 | Windows installer, recurring update notifications and verified renderer rebuild | Installed locally; release package verified |
 
 **v1.1.1**, published at **13:12 BST** on 9 September 2026, was the first public update. **v1.2.0** packages the later connection and Scan improvements for the public updater, together with this changelog. Each release provides the executable, portable ZIP, and ZIP checksum. [Version 1.1.1](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.1.1) · [Version 1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
@@ -838,7 +838,7 @@ This release retains the existing local data profile. Updating closes the built-
 
 **Validation:** 171 relevant tests passed, including NFT/BC filters in both languages, category ordering in both sort directions, borrowed-only rooms, stale saved prices, room batches, exports, price caching and concurrent scans. The offline layout was inspected with NFT, marketplace and CA badges.
 
-**Release status:** source changes and regression checks completed. Packaging is blocked because Windows rejects the existing inventory-renderer.exe with WinError 225 (virus or potentially unwanted software). No replacement launcher was installed or published.
+**Release status:** the initial package was blocked by Windows rejecting the former renderer. These changes are included in 1.2.8 after the source rebuild and verification described below.
 
 ### 55. Version 1.2.8 — Windows installation and updates while open — 11 September 2026
 
@@ -851,7 +851,11 @@ This release retains the existing local data profile. Updating closes the built-
 
 **Validation:** 37 recurring notification, cancellation, scan protection, update integrity, launcher, Windows app identity, installer validation and localization regressions passed. An isolated installer test with inert files and a separate identity verified Start shortcut/AppUserModelID, Installed Apps registration, uninstall and preservation of unrelated files. The inert test package is not a Pixelio release.
 
-**Release status:** the full application cannot currently be packaged: Windows previously rejected inventory-renderer.exe with WinError 225 and the file is now absent. The installed Desktop copy was not replaced, security settings were not changed and no release was published.
+**Renderer resolution:** Windows identified the former renderer as Wacatac.C!ml and quarantined it without execution. Rebuilt from reviewed source, a checksum-verified official Go 1.27.1 toolchain and freshly verified pinned dependencies. Added limits on actual SWF decompression and graceful malformed-artwork errors; retained build metadata. The replacement passed an updated Defender custom scan with real-time protection enabled. This does not establish why the previous binary was classified. No quarantined file was restored and no exclusions were added.
+
+**Validation before packaging:** 197 application regressions and three native renderer tests passed. Real furniture samples (floor, colour variant and wall guitar) rendered full-size PNGs with transparency.
+
+**Release verification:** all three packaged application checks passed. The rebuilt renderer and complete release passed Defender custom scans with protection enabled. The packaged updater completed verification, replacement and restart in a disposable profile, retaining its data and rollback file. The Windows installer then installed 1.2.8 with Start/Desktop shortcuts and preserved all 35 saved scans and three wardrobe records. Installer and portable downloads are prepared for the public release.
 
 ## Current behavior and unfinished capabilities
 
@@ -874,8 +878,8 @@ This release retains the existing local data profile. Updating closes the built-
 | NFT avatars | Captured separately; values are not fabricated from clothing prices |
 | Embedded connection | Implemented for the supported Habbo Classic AIR workflow; external G-Earth connections remain available |
 | Repeated Java UAC popup | Replaced by one-time in-app connection setup; privileged setup changes may still prompt |
-| Windows compatibility | Portable Windows 10/11 x64 build; separate x86/ARM64 builds and independent clean-PC verification are not established here |
-| Public updates | 1.2.0 supersedes 1.1.1; versions 1.1.0 and later support startup update prompts when a newer version is available |
+| Windows compatibility | Installer and portable Windows 10/11 x64 builds; separate x86/ARM64 builds and independent clean-PC verification are not established here |
+| Public updates | 1.2.8 includes the installer and recurring checks while open; earlier updater-enabled versions receive it when next opened |
 | Current Scan control | 44 px high, transparent, brighter animated sweep, no click-induced underline |
 
 ## Verification history
