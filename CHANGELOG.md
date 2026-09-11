@@ -867,6 +867,19 @@ This release retains the existing local data profile. Updating closes the built-
 
 **Validation:** 15 badge, marketplace-availability and Builders Club regression tests passed. The Windows package passed its bundled self-check. Installer and portable packages were published as v1.2.9 on 11 September 2026. All five GitHub asset hashes and sizes matched the local release. The actual update client detects 1.2.9 from 1.2.8 and returns no update when already on 1.2.9.
 
+### 57. Version 1.2.10 — Simplify interface guidance — 11 September 2026
+
+- Remove the Marketplace / Custom / Excluded colour legend from the furniture-list footer in both languages and the inventory/room views.
+- Retain the row and selection counts in the footer.
+- Remove repeated wardrobe capture explanations, selection instructions, custom-rate summaries and generic valuation notes. Keep one concise consumed-clothing warning.
+- Show inspector guidance only for missing prices, borrowed BC/CA items, invalid input or unapplied changes. Avoid repeating BC explanations in the same inspector.
+- Keep the BRL conversion rate once; omit zero-count missing-price and exclusion notices, and the redundant custom-price card description.
+- Keep a single scan progress header and remaining count. Display the extra price-cache caption only when saved estimates or a cache warning are present, retaining estimate age.
+- Preserve icon-only Scan tooltips, connection/setup guidance, incomplete-scan warnings, NFT/FX freshness and valuation controls in both languages.
+- Replace the obsolete wardrobe instruction to open G-Earth with a concise instruction to connect through Pixelio.
+
+**Validation:** 59 relevant regressions and all three packaged checks passed. Room and wardrobe layouts were inspected in an isolated native preview. Local package only; not yet published or installed.
+
 ## Current behavior and unfinished capabilities
 
 | Area | Current state |
@@ -944,6 +957,11 @@ Implementation details were checked against these development files and their te
 Some older manuals retain instructions from earlier stages, such as opening external G-Earth or authorizing Java. The later entries above describe the current implementation. Files named here refer to the development checkout; the portable distribution does not include all source or the development conversation.
 
 For future entries, append the date, actual version/build, concrete additions or fixes, relevant validation, and publication status. Keep local fixes distinct when a version number is reused, and mark reverted experiments or preview-only work explicitly. This changelog is a maintained document; it is not an automatic change recorder.
+
+
+
+
+
 
 
 
