@@ -34,7 +34,7 @@ Times below use **Europe/London (BST, UTC+1)**. Time ranges generally run from t
 | 1.2.14 | 11 September 2026 | Integrated spacious window header and aligned controls | Published on GitHub |
 | 1.2.15 | 11 September 2026 | Coherent dropdowns aligned to their fields | Published on GitHub |
 | 1.2.16 | 11 September 2026 | Smooth navigation tab transitions | Confirmed local build |
-| 1.3.0 | 11 September 2026 | Integrated clothing Try-On and local outfits | Confirmed local build |
+| 1.3.0 | 11 September 2026 | Integrated clothing Try-On and local outfits | Published on GitHub |
 
 **v1.1.1**, published at **13:12 BST** on 9 September 2026, was the first public update. **v1.2.0** packages the later connection and Scan improvements for the public updater, together with this changelog. Each release provides the executable, portable ZIP, and ZIP checksum. [Version 1.1.1](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.1.1) · [Version 1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
@@ -953,7 +953,7 @@ This release retains the existing local data profile. Updating closes the built-
 - Load the account's public current appearance when available, retaining an account-specific cached fallback and a usable default. Name, save, load and delete local outfits per account. Keep unsaved drafts isolated and preserve outfits when assigning legacy scans.
 - Keep public metadata, profile and artwork requests on background workers with caching, bounded queues, selection debouncing and stale-response rejection across account changes. Do not send appearance-change packets to Habbo.
 
-**Validation:** 106 focused tests passed across Try-On, wardrobe, clothing valuation, accounts, scanner/concurrency, translations, dropdowns and tab navigation. Composition was exercised against current official data containing 3,267 sets and 1,966 fully mapped products in both body types. Real artwork was inspected in integrated native previews at 1536×970 and 1180×790. All three packaged checks passed (folder build, standalone executable, and relocated executable). Installer and executable checksums were verified. Not published or installed.
+**Validation:** 106 focused tests passed across Try-On, wardrobe, clothing valuation, accounts, scanner/concurrency, translations, dropdowns and tab navigation. Composition was exercised against current official data containing 3,267 sets and 1,966 fully mapped products in both body types. Real artwork was inspected in integrated native previews at 1536×970 and 1180×790. All three packaged checks passed (folder build, standalone executable, and relocated executable). Installer and executable checksums were verified. Published as v1.3.0 on 11 September 2026. All five uploaded asset hashes and sizes match the tested local build. The actual update client detects 1.3.0 from 1.2.15, verifies the executable digest, and returns no update when already on 1.3.0. Not installed during publication.
 
 ## Current behavior and unfinished capabilities
 
