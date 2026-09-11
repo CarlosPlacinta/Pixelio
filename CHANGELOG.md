@@ -1081,3 +1081,13 @@ Returning Chrome users connect directly when the extension responds. The same Co
 Validation: 90 Python checks, JavaScript behavior checks, hidden-window layout checks, compiled native-helper readiness and launch round trips, and packaged Windows installation checks. A real signed-in Habbo launch remains to be verified. Chrome must be running with Habbo.com.br signed in.
 
 [Chrome setup guide](https://github.com/CarlosPlacinta/Pixelio/blob/main/CHROME-LAUNCH.md)
+
+## 1.3.19 — Chrome setup recovery and direct dragging (11 September 2026)
+
+Fixed a timer race that could abandon Chrome setup completion and leave its button disabled. Installation and readiness results now share a continuous UI event loop, with cancellation and error recovery.
+
+The setup screen offers a native card to drag directly onto Chrome's extensions page after enabling Developer mode. Pixelio keeps it visible above Chrome and continues automatically once the extension responds. Open Chrome reopens the page without reinstalling the helper; folder copying and manual launch remain available.
+
+Validation: 100 Python checks, JavaScript behavior checks, native folder-drag registration, bilingual layout checks and packaged Windows checks. The native drag runtime is bundled and verified. Real Chrome installation and a signed-in Habbo launch still need live verification.
+
+A Web Store upload package and privacy policy have been prepared. The assigned store ID pfcippmfdghhdiekeadpgbnkklbhbpml is registered in the native helper. After Google approves the listing, the public store-status file can switch setup to Add to Chrome without another app rebuild. Live validation and Google review remain pending.

@@ -3,11 +3,11 @@
 Pixelio evaluates Habbo inventories, rooms and unlocked wardrobe items.
 Available in Brazilian Portuguese and English for Windows 10/11 x64.
 
-**Latest version: [1.3.18](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.18)** · **[Full changelog](CHANGELOG.md)**
+**Latest version: [1.3.19](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.19)** · **[Full changelog](CHANGELOG.md)**
 
 ## Install
 
-Download **Pixelio-Setup-1.3.18-x64.exe** from the
+Download **Pixelio-Setup-1.3.19-x64.exe** from the
 [latest release](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 The installer adds Pixelio to **Start** and **Installed apps**, and offers an
 optional desktop shortcut. Right-click Pixelio in Start to pin it to Start or
@@ -24,14 +24,14 @@ Opening Pixelio shows saved results without automatically starting a scan.
 Closing or updating Pixelio ends its built-in Habbo connection; reconnect afterward.
 External G-Earth connections remain available under Connections.
 
-## What's new in 1.3.18
+## What's new in 1.3.19
 
-- **Connect account** now prompts for Chrome extension setup on first use.
-- **Install Chrome extension** prepares the helper, copies the folder path and opens Chrome's extensions page. Complete Chrome's one-time **Load unpacked** step; Pixelio continues automatically.
-- **Continue manually** retains the existing workflow and is remembered, with no repeated setup prompts.
-- Returning Chrome users use the same Connect button. Launch still waits for the scanner and connection listeners.
-
-Chrome launch is experimental. Chrome must remain running with a signed-in Habbo tab, which can stay minimized. The extension currently uses **Load unpacked**; it is not yet in the Chrome Web Store. Automated checks passed, but a real signed-in launch remains to be verified. [Chrome setup guide](CHROME-LAUNCH.md).
+- Fixed a setup timer race that could leave Install Chrome extension disabled.
+- After setup opens Chrome, enable Developer mode and drag the new Pixelio card onto the extensions page. No folder picker or path pasting is needed.
+- Open Chrome reopens the setup page without restarting installation. Automatic detection and the saved manual choice remain available.
+- Includes native drag support, setup error recovery and cancellation checks.
+- Registers the assigned Chrome Web Store extension ID. Once the listing is published and marked available, setup opens Add to Chrome automatically.
+Chrome launch is experimental. Chrome must remain running with a signed-in Habbo tab, which can stay minimized. The extension currently uses Developer mode with a dragged folder (or **Load unpacked**); a Chrome Web Store draft is being prepared. Automated checks passed, but a real signed-in launch remains to be verified. [Chrome setup guide](CHROME-LAUNCH.md).
 
 Try-On, saved outfits, inventory/room/wardrobe scans, the clearer HC badge and persistent wardrobe cache remain available.
 Ownership reflects the latest captured wardrobe. Standard clothing is available; HC, unowned and unknown-ownership pieces are labelled separately. The current public avatar appearance is used when available, with a cached or default fallback. Uncached artwork requires internet access and some pieces may be unavailable from Habbo's public renderer.
@@ -55,7 +55,7 @@ Choose **Update now** or **Later** when a newer release is available.
 Later dismisses that version for the current session. Newer releases can still
 notify you. Finish or stop active scans before installing an update.
 
-Existing versions with the updater can receive 1.3.18 when they next open.
+Existing versions with the updater can receive 1.3.19 when they next open.
 To switch from a portable copy to the installed app, close Pixelio, run Setup,
 then open the new Start menu entry. Your existing profile is reused.
 
@@ -69,9 +69,9 @@ before uninstalling, if it is no longer needed.
 O Pixelio avalia inventários, quartos e visuais desbloqueados do Habbo.
 Disponível em PT-BR e inglês para Windows 10/11 x64.
 
-**Versão atual: [1.3.18](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.18)** · **[Histórico completo](CHANGELOG.md)**
+**Versão atual: [1.3.19](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.19)** · **[Histórico completo](CHANGELOG.md)**
 
-Baixe **Pixelio-Setup-1.3.18-x64.exe** na
+Baixe **Pixelio-Setup-1.3.19-x64.exe** na
 [versão mais recente](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 O instalador adiciona o Pixelio ao **Iniciar** e aos **Aplicativos instalados**,
 com atalho opcional na área de trabalho. Clique com o botão direito no Pixelio
@@ -82,7 +82,7 @@ Abra o Pixelio, clique em **Conectar conta**, conclua **Configurar conexão** se
 necessário e entre no **Habbo Classic (AIR)**. Não é necessário instalar
 G-Earth, Java, Go ou Python separadamente.
 
-A versão 1.3.18 oferece a instalação da extensão ao clicar em **Conectar conta** pela primeira vez. **Instalar extensão do Chrome** prepara o componente, copia a pasta e abre a página de extensões. Após **Carregar sem compactação**, o Pixelio continua automaticamente. **Continuar manualmente** mantém o fluxo atual e salva sua escolha, sem repetir o aviso.
+A versão 1.3.19 corrige o botão de instalação que podia ficar desativado. Após abrir o Chrome, ative o **Modo do desenvolvedor** e arraste o novo cartão do Pixelio para a página de extensões. Não é necessário procurar pastas ou colar caminhos. O Pixelio continua automaticamente e mantém a opção manual.
 
 A abertura pelo Chrome é experimental. Mantenha o Chrome aberto com uma aba do Habbo conectada; ele pode ficar minimizado. A extensão ainda usa **Carregar sem compactação** e não foi publicada na Chrome Web Store. Os testes automatizados passaram, mas a abertura real com uma sessão conectada ainda precisa ser verificada. [Guia de configuração](CHROME-LAUNCH.md).
 
