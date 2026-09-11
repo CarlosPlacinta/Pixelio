@@ -1070,3 +1070,14 @@ Download Pixelio-Setup-1.3.17-x64.exe for the installer, Pixelio.exe for the sta
 
 [Chrome setup guide](https://github.com/CarlosPlacinta/Pixelio/blob/main/CHROME-LAUNCH.md)
 
+## 1.3.18 — Chrome setup from Connect account (11 September 2026)
+
+Clicking Connect account now offers Chrome extension installation or the existing manual workflow on first use. Pixelio remembers the choice; manual users are not prompted again.
+
+Install Chrome extension prepares the helper, copies the folder path and opens Chrome's extensions page. Once the one-time Load unpacked step is complete, Pixelio detects readiness and continues automatically. No extra Done or daily extension button is needed.
+
+Returning Chrome users connect directly when the extension responds. The same Connect button cancels setup, and cancelled or outdated results cannot start a connection. Readiness probes do not request a Habbo launch ticket. Credentials remain on Habbo's website.
+
+Validation: 88 Python checks, JavaScript behavior checks, hidden-window layout checks, compiled native-helper readiness and launch round trips, and packaged Windows installation checks. A real signed-in Habbo launch remains to be verified. Chrome must be running with Habbo.com.br signed in.
+
+[Chrome setup guide](https://github.com/CarlosPlacinta/Pixelio/blob/main/CHROME-LAUNCH.md)

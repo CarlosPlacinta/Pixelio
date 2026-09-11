@@ -1,31 +1,63 @@
-# Optional Chrome launch
+# Chrome launch — 1.3.18
 
-Pixelio 1.3.17 supports two saved choices under **Connections → Habbo launch**.
+Click **Connect account**. On first use, Pixelio offers **Install Chrome extension**
+or **Continue manually**. Your choice is remembered.
 
-- **Launch manually (current flow)** is the default: click Connect account, then enter Habbo Classic yourself as before.
-- **Launch through Chrome** uses the same Connect account button to prepare Pixelio and open the installed Habbo Classic client using your signed-in Habbo.com.br tab.
+## One-time Chrome setup
 
-## One-time setup
+1. Click **Install Chrome extension**. Pixelio prepares its helper, copies the
+   extension folder path, and opens Chrome's extensions page.
+2. Turn on **Developer mode**, click **Load unpacked**, and paste the copied folder
+   path. If Pixelio is already listed after an update, click **Reload** instead.
+3. Keep Habbo.com.br signed in in that Chrome profile. Pixelio detects the
+   extension and continues the connection automatically; there is no Done button.
 
-1. Install or update Pixelio from the [latest release](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
-2. Open **Connections → Set up Chrome launch**. Pixelio registers its local helper and opens the extension folder.
-3. In Chrome, open `chrome://extensions`, enable **Developer mode**, click **Load unpacked**, and choose that folder.
-4. Keep Habbo.com.br signed in on a tab in that Chrome profile. Install the extension in just the profile whose account you want to launch.
-5. Choose **Launch through Chrome** in Pixelio. The latest installed official AIR client is detected; **Choose Habbo Classic** lets you select another installed AIR executable.
-6. Use **Connect account**. The extension has no daily button to click. Chrome and the Habbo tab can stay minimized.
+After setup, use **Connect account** as usual. Pixelio waits for the scanner,
+routing and listeners before launching Habbo Classic. Chrome must be running
+with a signed-in Habbo.com.br tab; it can stay minimized. Your login stays on
+Habbo's website, with no password entry in Pixelio.
 
-You enter your login details only on the Habbo website. Chrome launch requires Chrome to be running. To switch back, choose **Launch manually (current flow)**; the extension is not required for manual launch.
+**Continue manually** keeps the existing workflow and stops future setup prompts.
+Change your choice later under **Connections → Habbo launch**. Chrome failures
+also leave manual entry available. The same Connect button cancels setup or
+disconnects an active connection.
 
-## Timing and cancellation
+The extension currently requires Chrome's one-time **Load unpacked** step; it is
+not yet published in the Chrome Web Store. Pixelio cannot silently approve
+extension installation.
 
-Pixelio waits for the scanner's authenticated attachment, Habbo routing and all connection listeners before requesting a fresh ticket. The same button cancels or disconnects. A late website response cannot launch Habbo after cancellation. A failed Chrome request leaves manual entry available. Pixelio does not close an existing Habbo client automatically.
+Pixelio detects the newest installed official AIR client. **Choose Habbo Classic**
+in Connections lets you select another installed AIR client. Install the extension
+in the Chrome profile containing the Habbo account you want to use.
 
-## Preview status and data
+## Implementation and limits
 
-Chrome launch is experimental and currently supports Windows and Habbo BR. The extension has not been published to the Chrome Web Store; installation uses the developer workflow above. No silent installation or enterprise policy change is performed.
+The extension has only Habbo.com.br host access, scripting, native messaging and
+reconnect alarms. Its injected function calls Habbo's own `$http` service, using
+the site's existing fingerprint/session interceptors. It does not inspect cookies
+or passwords. The native host accepts only this extension's stable ID. An
+attempt-specific authenticated loopback connection carries the ticket in memory;
+only temporary discovery metadata is persisted. No shell or external protocol
+handler receives the launch command.
 
-The extension requests only Habbo.com.br site access, scripting, native messaging and reconnect alarms. It uses Habbo's own request service and does not extract cookies or passwords. The launch ticket passes locally in memory to the installed client; Pixelio does not save it or send it to another service.
+Cancellation and disconnect invalidate pending results. A late website response
+cannot launch the game after cancellation. A second Pixelio window cannot replace
+an active launch request. Timeout does not trigger a new client launch.
 
-Automated checks passed with synthetic tickets, including cancellation, missing tabs, server validation, the compiled native helper and packaged apps. A real signed-in Habbo launch remains to be verified after extension installation.
+The initial implementation is for Windows and Habbo BR, matching Pixelio's current
+scanner support. Habbo's public website script and installed launcher code were
+inspected to verify the endpoint, protocol and native arguments. Automated tests
+use synthetic tickets; a real signed-in launch remains to be verified after the
+one-time Chrome installation. No store submission or automatic extension install
+was performed.
 
-To remove the extension, remove Pixelio from `chrome://extensions`. The native helper can be unregistered by deleting only `com.pixelio.habbo` under `HKCU\Software\Google\Chrome\NativeMessagingHosts`. Saved Pixelio scans are separate.
+## Verification
+
+- Python connection, scanner, account, Chrome and first-connect onboarding checks.
+- JavaScript tests for response validation, missing tab, cancellation, retry,
+  host scope, readiness detection and the actual injected request function.
+- Real local sockets with native messaging, including the compiled helper.
+- Rebuilt engine; listener readiness is emitted only after binding all listeners.
+- Packaged one-folder, single-file and relocated executable installation checks.
+
+To remove the extension, remove Pixelio from chrome://extensions. The native helper can be unregistered by deleting only com.pixelio.habbo under HKCU\Software\Google\Chrome\NativeMessagingHosts. Saved Pixelio scans are separate.
