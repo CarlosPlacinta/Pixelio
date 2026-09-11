@@ -892,6 +892,14 @@ This release retains the existing local data profile. Updating closes the built-
 
 **Validation:** 45 relevant regressions and all three packaged checks passed. Published as v1.2.11 on 11 September 2026. All five GitHub asset hashes and sizes matched the verified local package. The real update client detects 1.2.11 from 1.2.10 and returns no update when already on 1.2.11.
 
+### 59. Version 1.2.12 — Matching summary-card icons — 11 September 2026
+
+- Replace the four summary-card icons with the approved Pixelio set: credit stack, average-price bars, checked box and adjustment sliders.
+- Use consistent mint shapes, gold accents and transparent backgrounds. Downsample the 256-pixel assets to matching 56-pixel slots with smooth edges.
+- Include editable SVG masters and validate all four transparent PNGs in packaged checks. Inventory and room cards share the same icons.
+
+**Validation:** all three packaged checks passed, including verification of all four transparent icons. The native summary cards were visually reviewed. Installer ready locally; not published or installed.
+
 ## Current behavior and unfinished capabilities
 
 | Area | Current state |
@@ -969,6 +977,8 @@ Implementation details were checked against these development files and their te
 Some older manuals retain instructions from earlier stages, such as opening external G-Earth or authorizing Java. The later entries above describe the current implementation. Files named here refer to the development checkout; the portable distribution does not include all source or the development conversation.
 
 For future entries, append the date, actual version/build, concrete additions or fixes, relevant validation, and publication status. Keep local fixes distinct when a version number is reused, and mark reverted experiments or preview-only work explicitly. This changelog is a maintained document; it is not an automatic change recorder.
+
+
 
 
 
