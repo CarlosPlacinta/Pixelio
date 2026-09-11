@@ -31,6 +31,7 @@ Times below use **Europe/London (BST, UTC+1)**. Time ranges generally run from t
 | 1.2.11 | 11 September 2026 | Compact dashboard captions, relocated counts and Média title | Published on GitHub |
 | 1.2.12 | 11 September 2026 | Matching mint-and-gold summary icons | Published on GitHub |
 | 1.2.13 | 11 September 2026 | Habbo-inspired summary icons and balanced card spacing | Published on GitHub |
+| 1.2.14 | 11 September 2026 | Integrated spacious window header and aligned controls | Published on GitHub |
 
 **v1.1.1**, published at **13:12 BST** on 9 September 2026, was the first public update. **v1.2.0** packages the later connection and Scan improvements for the public updater, together with this changelog. Each release provides the executable, portable ZIP, and ZIP checksum. [Version 1.1.1](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.1.1) · [Version 1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
@@ -919,7 +920,7 @@ This release retains the existing local data profile. Updating closes the built-
 - Preserve native resizing, taskbar minimize/restore and the system menu. The logo and unused header space can move the window; the close control follows the existing app cleanup path.
 - Apply the approved spacious header: 82-pixel height, a larger compact logo, increased logo padding and a wider gap before the tabs. Keep navigation and window controls centered, with adaptive widths for the minimum window size.
 
-**Validation:** native Windows integration checks passed for resize limits, minimize, maximize, restore and close handling. The compact and maximized header and frame colour were reviewed in an isolated preview. All three packaged checks passed and the installer checksum was verified. Installer ready locally; not published or installed.
+**Validation:** native Windows integration checks passed for resize limits, minimize, maximize, restore and close handling. The compact and maximized header and frame colour were reviewed in an isolated preview. All three packaged checks passed and the installer checksum was verified. Published as v1.2.14 on 11 September 2026. All five GitHub asset hashes and sizes matched the tested local package. The real update client detects 1.2.14 from 1.2.13 and returns no update when already on 1.2.14.
 
 ## Current behavior and unfinished capabilities
 
