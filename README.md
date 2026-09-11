@@ -3,11 +3,11 @@
 Pixelio evaluates Habbo inventories, rooms and unlocked wardrobe items.
 Available in Brazilian Portuguese and English for Windows 10/11 x64.
 
-**Latest version: [1.2.8](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.8)** · **[Full changelog](CHANGELOG.md)**
+**Latest version: [1.2.9](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.9)** · **[Full changelog](CHANGELOG.md)**
 
 ## Install
 
-Download **Pixelio-Setup-1.2.8-x64.exe** from the
+Download **Pixelio-Setup-1.2.9-x64.exe** from the
 [latest release](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 The installer adds Pixelio to **Start** and **Installed apps**, and offers an
 optional desktop shortcut. Right-click Pixelio in Start to pin it to Start or
@@ -24,7 +24,11 @@ Opening Pixelio shows saved results without automatically starting a scan.
 Closing or updating Pixelio ends its built-in Habbo connection; reconnect afterward.
 External G-Earth connections remain available under Connections.
 
-## What's new in 1.2.8
+## What's new in 1.2.9
+
+- NFT items now display only their orange NFT tag. Marketplace availability, filters and values are unchanged.
+
+## Included features
 
 - Windows installer and Start/taskbar integration.
 - Update checks at launch and every ten minutes while open.
@@ -43,7 +47,7 @@ Choose **Update now** or **Later** when a newer release is available.
 Later dismisses that version for the current session. Newer releases can still
 notify you. Finish or stop active scans before installing an update.
 
-Existing versions with the updater can receive 1.2.8 when they next open.
+Existing versions with the updater can receive 1.2.9 when they next open.
 To switch from a portable copy to the installed app, close Pixelio, run Setup,
 then open the new Start menu entry. Your existing profile is reused.
 
@@ -57,9 +61,9 @@ before uninstalling, if it is no longer needed.
 O Pixelio avalia inventários, quartos e visuais desbloqueados do Habbo.
 Disponível em PT-BR e inglês para Windows 10/11 x64.
 
-**Versão atual: [1.2.8](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.8)** · **[Histórico completo](CHANGELOG.md)**
+**Versão atual: [1.2.9](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.9)** · **[Histórico completo](CHANGELOG.md)**
 
-Baixe **Pixelio-Setup-1.2.8-x64.exe** na
+Baixe **Pixelio-Setup-1.2.9-x64.exe** na
 [versão mais recente](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 O instalador adiciona o Pixelio ao **Iniciar** e aos **Aplicativos instalados**,
 com atalho opcional na área de trabalho. Clique com o botão direito no Pixelio
@@ -70,7 +74,9 @@ Abra o Pixelio, clique em **Conectar conta**, conclua **Configurar conexão** se
 necessário e entre no **Habbo Classic (AIR)**. Não é necessário instalar
 G-Earth, Java, Go ou Python separadamente.
 
-A versão 1.2.8 inclui instalador Windows, avisos de atualização ao abrir e a cada
+Na versão 1.2.9, itens NFT exibem somente a tag laranja NFT. Filtros e valores continuam funcionando como antes.
+
+O Pixelio inclui instalador Windows, avisos de atualização ao abrir e a cada
 dez minutos, tags e filtros NFT/CA, estimativas com preços salvos, correções no
 scan de quartos e um renderizador de imagens recompilado e verificado.
 
@@ -89,3 +95,4 @@ Pixelio is independent. Habbo artwork belongs to its owners. The embedded engine
 is based on G-Earth. Runtime and dependency notices are included in the portable ZIP.
 This repository distributes application releases and documentation, not personal
 accounts, scans or settings.
+
