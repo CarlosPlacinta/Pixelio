@@ -922,6 +922,16 @@ This release retains the existing local data profile. Updating closes the built-
 
 **Validation:** native Windows integration checks passed for resize limits, minimize, maximize, restore and close handling. The compact and maximized header and frame colour were reviewed in an isolated preview. All three packaged checks passed and the installer checksum was verified. Published as v1.2.14 on 11 September 2026. All five GitHub asset hashes and sizes matched the tested local package. The real update client detects 1.2.14 from 1.2.13 and returns no update when already on 1.2.14.
 
+### 62. Version 1.2.15 — Coherent dropdown menus — 11 September 2026
+
+- Replace the seven native combobox locations with a shared Pixelio dropdown: account selection, saved scans, room owners, furniture filters, wardrobe filters, connection ports and scan assignment.
+- Use dark fields and menus, rounded borders, mint selection with a checkmark, matching chevrons and consistently spaced options.
+- Name the PT-BR Builders Club filter "Clube do Arquiteto", without the redundant "(CA)" suffix.
+- Match every menu to its field width and align both edges vertically, without expanding sideways for long labels. Keep menus inside their window, opening above the field when needed, with scrolling for long lists. Widen the furniture filter for readable labels.
+- Preserve selection events, translated options, editable connection ports, keyboard navigation, type-to-find, Escape cancellation and modal-dialog focus/grab restoration.
+
+**Validation:** 22 targeted tests passed, covering dropdown interactions, room history, furniture tags and localization. The native menu and NFT filter selection were visually checked. All three packaged checks passed for the final build, including the aligned menu widths and PT-BR filter-label refinement. The installer checksum was verified. Release prepared for publication.
+
 ## Current behavior and unfinished capabilities
 
 | Area | Current state |

@@ -3,11 +3,11 @@
 Pixelio evaluates Habbo inventories, rooms and unlocked wardrobe items.
 Available in Brazilian Portuguese and English for Windows 10/11 x64.
 
-**Latest version: [1.2.14](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.14)** · **[Full changelog](CHANGELOG.md)**
+**Latest version: [1.2.15](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.15)** · **[Full changelog](CHANGELOG.md)**
 
 ## Install
 
-Download **Pixelio-Setup-1.2.14-x64.exe** from the
+Download **Pixelio-Setup-1.2.15-x64.exe** from the
 [latest release](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 The installer adds Pixelio to **Start** and **Installed apps**, and offers an
 optional desktop shortcut. Right-click Pixelio in Start to pin it to Start or
@@ -24,10 +24,10 @@ Opening Pixelio shows saved results without automatically starting a scan.
 Closing or updating Pixelio ends its built-in Habbo connection; reconnect afterward.
 External G-Earth connections remain available under Connections.
 
-## What's new in 1.2.14
+## What's new in 1.2.15
 
-- Integrated window controls in a taller navigation header, with more breathing room around the Pixelio logo.
-- Aligned minimize, maximize/restore and close icons, adaptive spacing and a matching Windows 11 frame colour.
+- Coherent dropdown menus across accounts, rooms, filters, saved scans and connection settings.
+- Dark menus with mint selection and checkmarks, aligned exactly to their fields. The PT-BR filter reads "Clube do Arquiteto", without "(CA)".
 
 ## Included features
 
@@ -48,7 +48,7 @@ Choose **Update now** or **Later** when a newer release is available.
 Later dismisses that version for the current session. Newer releases can still
 notify you. Finish or stop active scans before installing an update.
 
-Existing versions with the updater can receive 1.2.14 when they next open.
+Existing versions with the updater can receive 1.2.15 when they next open.
 To switch from a portable copy to the installed app, close Pixelio, run Setup,
 then open the new Start menu entry. Your existing profile is reused.
 
@@ -62,9 +62,9 @@ before uninstalling, if it is no longer needed.
 O Pixelio avalia inventários, quartos e visuais desbloqueados do Habbo.
 Disponível em PT-BR e inglês para Windows 10/11 x64.
 
-**Versão atual: [1.2.14](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.14)** · **[Histórico completo](CHANGELOG.md)**
+**Versão atual: [1.2.15](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.15)** · **[Histórico completo](CHANGELOG.md)**
 
-Baixe **Pixelio-Setup-1.2.14-x64.exe** na
+Baixe **Pixelio-Setup-1.2.15-x64.exe** na
 [versão mais recente](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 O instalador adiciona o Pixelio ao **Iniciar** e aos **Aplicativos instalados**,
 com atalho opcional na área de trabalho. Clique com o botão direito no Pixelio
@@ -75,7 +75,7 @@ Abra o Pixelio, clique em **Conectar conta**, conclua **Configurar conexão** se
 necessário e entre no **Habbo Classic (AIR)**. Não é necessário instalar
 G-Earth, Java, Go ou Python separadamente.
 
-A versão 1.2.14 integra os controles da janela ao cabeçalho, com mais altura, espaço ao redor do logo e ícones alinhados. A cor da moldura no Windows 11 acompanha o cabeçalho, e o espaçamento se adapta à largura da janela.
+A versão 1.2.15 traz menus suspensos coerentes em todo o app, com fundo escuro, seleção verde-menta e marca de seleção. Os menus têm a mesma largura dos campos, sem expansão lateral. O filtro agora mostra apenas "Clube do Arquiteto", sem "(CA)".
 
 O Pixelio inclui instalador Windows, avisos de atualização ao abrir e a cada
 dez minutos, tags e filtros NFT/CA, estimativas com preços salvos, correções no
