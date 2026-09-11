@@ -25,7 +25,7 @@ Times below use **Europe/London (BST, UTC+1)**. Time ranges generally run from t
 | 1.2.5 | 9 September 2026 | Recover connection setup without repeating a successful installation | Installed locally; not published |
 | 1.2.6 | 11 September 2026 | Persistent price estimates, shared observations and artwork history index | Installed locally; not published |
 | 1.2.7 | 11 September 2026 | NFT and BC/CA tags, category filters and ordering | Included in 1.2.8 |
-| 1.2.8 | 11 September 2026 | Windows installer, recurring update notifications and verified renderer rebuild | Installed locally; release package verified |
+| 1.2.8 | 11 September 2026 | Windows installer, recurring update notifications and verified renderer rebuild | Published on GitHub and installed locally |
 
 **v1.1.1**, published at **13:12 BST** on 9 September 2026, was the first public update. **v1.2.0** packages the later connection and Scan improvements for the public updater, together with this changelog. Each release provides the executable, portable ZIP, and ZIP checksum. [Version 1.1.1](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.1.1) · [Version 1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
@@ -855,7 +855,7 @@ This release retains the existing local data profile. Updating closes the built-
 
 **Validation before packaging:** 197 application regressions and three native renderer tests passed. Real furniture samples (floor, colour variant and wall guitar) rendered full-size PNGs with transparency.
 
-**Release verification:** all three packaged application checks passed. The rebuilt renderer and complete release passed Defender custom scans with protection enabled. The packaged updater completed verification, replacement and restart in a disposable profile, retaining its data and rollback file. The Windows installer then installed 1.2.8 with Start/Desktop shortcuts and preserved all 35 saved scans and three wardrobe records. Installer and portable downloads are prepared for the public release.
+**Release verification:** all three packaged application checks passed. The rebuilt renderer and complete release passed Defender custom scans with protection enabled. The packaged updater completed verification, replacement and restart in a disposable profile, retaining its data and rollback file. The Windows installer then installed 1.2.8 with Start/Desktop shortcuts and preserved all 35 saved scans and three wardrobe records. Installer and portable downloads were published as v1.2.8 on 11 September 2026. Every GitHub asset digest matched the verified local file. The real update client detects 1.2.8 from an older version and correctly returns no update when already running 1.2.8.
 
 ## Current behavior and unfinished capabilities
 
