@@ -30,6 +30,7 @@ Times below use **Europe/London (BST, UTC+1)**. Time ranges generally run from t
 | 1.2.10 | 11 September 2026 | Remove redundant interface guidance and legends | Published on GitHub |
 | 1.2.11 | 11 September 2026 | Compact dashboard captions, relocated counts and Média title | Published on GitHub |
 | 1.2.12 | 11 September 2026 | Matching mint-and-gold summary icons | Published on GitHub |
+| 1.2.13 | 11 September 2026 | Habbo-inspired summary icons and balanced card spacing | Published on GitHub |
 
 **v1.1.1**, published at **13:12 BST** on 9 September 2026, was the first public update. **v1.2.0** packages the later connection and Scan improvements for the public updater, together with this changelog. Each release provides the executable, portable ZIP, and ZIP checksum. [Version 1.1.1](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.1.1) · [Version 1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
@@ -909,7 +910,7 @@ This release retains the existing local data profile. Updating closes the built-
 - Give all four cards consistent inner padding, a 16-pixel icon-to-text gap, aligned titles and values, and more vertical space for supporting text. Adapt long amounts to the available width and wrap supporting text within each card.
 - Update packaged checks to validate the four new RGBA assets.
 
-**Validation:** all three packaged checks passed, including verification of the four RGBA icons. Cutouts were inspected on light and dark backgrounds, and the native cards were visually reviewed at their actual size. Installer ready locally; not published or installed.
+**Validation:** all three packaged checks passed, including verification of the four RGBA icons. Cutouts were inspected on light and dark backgrounds, and the native cards were reviewed in compact and maximized windows. Published as v1.2.13 on 11 September 2026. All five GitHub asset hashes and sizes matched the verified local package. The real update client detects 1.2.13 from 1.2.12 and returns no update when already on 1.2.13.
 
 ## Current behavior and unfinished capabilities
 
