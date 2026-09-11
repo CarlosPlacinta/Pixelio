@@ -3,11 +3,11 @@
 Pixelio evaluates Habbo inventories, rooms and unlocked wardrobe items.
 Available in Brazilian Portuguese and English for Windows 10/11 x64.
 
-**Latest version: [1.3.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.0)** · **[Full changelog](CHANGELOG.md)**
+**Latest version: [1.3.17](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.17)** · **[Full changelog](CHANGELOG.md)**
 
 ## Install
 
-Download **Pixelio-Setup-1.3.0-x64.exe** from the
+Download **Pixelio-Setup-1.3.17-x64.exe** from the
 [latest release](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 The installer adds Pixelio to **Start** and **Installed apps**, and offers an
 optional desktop shortcut. Right-click Pixelio in Start to pin it to Start or
@@ -24,13 +24,16 @@ Opening Pixelio shows saved results without automatically starting a scan.
 Closing or updating Pixelio ends its built-in Habbo connection; reconnect afterward.
 External G-Earth connections remain available under Connections.
 
-## What's new in 1.3.0
+## What's new in 1.3.17
 
-- Open **Looks → Try-On** to experiment with real Habbo clothing and avatar artwork. The existing scans and values remain under **My clothing**.
-- Browse categories, search, filter owned/all clothing, edit colours, rotate and reset. Multi-part products, gender compatibility and bundled variants are supported.
-- Name, save, load and delete local outfits separately for each account. Try-On never sends appearance changes to Habbo.
-- Smooth mint underline and text transitions when switching the main navigation tabs.
+- Optional **Launch through Chrome** uses the existing Connect account button. **Launch manually (current flow)** remains the default.
+- Waits for the scanner, routing and connection listeners before requesting a fresh launch ticket from the signed-in Habbo.com.br tab.
+- Keeps credentials on Habbo's website, supports cancellation, and leaves manual entry available if Chrome launch fails.
+- Includes one-time helper/extension setup under **Connections → Set up Chrome launch**.
 
+Chrome launch is experimental. Chrome must remain running with a signed-in Habbo tab, which can stay minimized. The extension currently uses **Load unpacked**; it is not yet in the Chrome Web Store. Automated checks passed, but a real signed-in launch remains to be verified. [Chrome setup guide](CHROME-LAUNCH.md).
+
+Try-On, saved outfits, inventory/room/wardrobe scans, the clearer HC badge and persistent wardrobe cache remain available.
 Ownership reflects the latest captured wardrobe. Standard clothing is available; HC, unowned and unknown-ownership pieces are labelled separately. The current public avatar appearance is used when available, with a cached or default fallback. Uncached artwork requires internet access and some pieces may be unavailable from Habbo's public renderer.
 
 ## Included features
@@ -52,7 +55,7 @@ Choose **Update now** or **Later** when a newer release is available.
 Later dismisses that version for the current session. Newer releases can still
 notify you. Finish or stop active scans before installing an update.
 
-Existing versions with the updater can receive 1.3.0 when they next open.
+Existing versions with the updater can receive 1.3.17 when they next open.
 To switch from a portable copy to the installed app, close Pixelio, run Setup,
 then open the new Start menu entry. Your existing profile is reused.
 
@@ -66,9 +69,9 @@ before uninstalling, if it is no longer needed.
 O Pixelio avalia inventários, quartos e visuais desbloqueados do Habbo.
 Disponível em PT-BR e inglês para Windows 10/11 x64.
 
-**Versão atual: [1.3.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.0)** · **[Histórico completo](CHANGELOG.md)**
+**Versão atual: [1.3.17](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.17)** · **[Histórico completo](CHANGELOG.md)**
 
-Baixe **Pixelio-Setup-1.3.0-x64.exe** na
+Baixe **Pixelio-Setup-1.3.17-x64.exe** na
 [versão mais recente](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 O instalador adiciona o Pixelio ao **Iniciar** e aos **Aplicativos instalados**,
 com atalho opcional na área de trabalho. Clique com o botão direito no Pixelio
@@ -79,7 +82,9 @@ Abra o Pixelio, clique em **Conectar conta**, conclua **Configurar conexão** se
 necessário e entre no **Habbo Classic (AIR)**. Não é necessário instalar
 G-Earth, Java, Go ou Python separadamente.
 
-A versão 1.3.0 adiciona **Visuais → Experimentar**, com roupas e avatares reais do Habbo, categorias, busca, filtros de posse, cores, rotação e restauração do visual. Scans e avaliações continuam em **Minhas roupas**. Salve, carregue e exclua visuais locais por conta; nenhuma alteração de aparência é enviada ao Habbo. A navegação principal também ganhou transições suaves.
+A versão 1.3.17 adiciona a opção **Abrir pelo Chrome** ao botão **Conectar conta**. O modo manual continua como padrão. A abertura automática aguarda o scanner, o encaminhamento e as conexões locais antes de solicitar acesso pela aba do Habbo.com.br já conectada. Nenhuma senha é digitada no Pixelio. Configure uma vez em **Conexões → Configurar abertura pelo Chrome**.
+
+A abertura pelo Chrome é experimental. Mantenha o Chrome aberto com uma aba do Habbo conectada; ele pode ficar minimizado. A extensão ainda usa **Carregar sem compactação** e não foi publicada na Chrome Web Store. Os testes automatizados passaram, mas a abertura real com uma sessão conectada ainda precisa ser verificada. [Guia de configuração](CHROME-LAUNCH.md).
 
 A posse usa a última captura do guarda-roupa. Roupas padrão estão disponíveis, e peças HC, não possuídas ou sem posse confirmada são identificadas. A aparência pública atual é usada quando disponível, com alternativa salva ou padrão. Imagens ainda não salvas precisam de internet; algumas peças podem estar indisponíveis no renderizador público do Habbo.
 

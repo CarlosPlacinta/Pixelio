@@ -1050,3 +1050,23 @@ For future entries, append the date, actual version/build, concrete additions or
 
 
 
+
+
+## 1.3.17 — Optional Chrome launch (11 September 2026)
+
+Pixelio 1.3.17 adds optional Chrome-assisted Habbo Classic launch to the existing Connect account button. Manual launch remains the default and is still available without the extension.
+
+- Choose Launch manually (current flow) or Launch through Chrome in Connections.
+- Automatic launch waits for the scanner to finish loading and authenticate, for Habbo routing, and for all connection listeners to be ready before requesting a launch ticket.
+- Use the signed-in Habbo.com.br tab in Chrome. No password entry in Pixelio and no cookie or password extraction.
+- The same button cancels or disconnects. Late responses cannot launch after cancellation; Chrome failures leave manual entry available.
+- Includes the optional Chrome extension and native messaging helper, with one-time setup under Connections → Set up Chrome launch.
+
+Chrome launch is an experimental, opt-in feature. Chrome must remain running with a signed-in Habbo.com.br tab; it can be minimized. The extension is not yet published in the Chrome Web Store, so initial setup uses chrome://extensions → Developer mode → Load unpacked. Install it only in the Chrome profile whose Habbo account you want to use. There is no silent extension installation or browser policy change.
+
+Validation: 76 Python connection, scanner, account and Chrome checks passed, plus JavaScript behavior tests, a compiled native-helper round trip with a synthetic ticket, and all three packaged Windows checks. A real signed-in Habbo launch still needs verification after extension installation.
+
+Download Pixelio-Setup-1.3.17-x64.exe for the installer, Pixelio.exe for the standalone app, or Pixelio-Windows-x64.zip for the portable package. SHA-256 files are included for the installer and ZIP. Existing installations can receive this version through Pixelio's updater.
+
+[Chrome setup guide](https://github.com/CarlosPlacinta/Pixelio/blob/main/CHROME-LAUNCH.md)
+
