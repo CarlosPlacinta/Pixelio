@@ -912,6 +912,15 @@ This release retains the existing local data profile. Updating closes the built-
 
 **Validation:** all three packaged checks passed, including verification of the four RGBA icons. Cutouts were inspected on light and dark backgrounds, and the native cards were reviewed in compact and maximized windows. Published as v1.2.13 on 11 September 2026. All five GitHub asset hashes and sizes matched the verified local package. The real update client detects 1.2.13 from 1.2.12 and returns no update when already on 1.2.13.
 
+### 61. Version 1.2.14 — Integrated window header — 11 September 2026
+
+- Integrate minimize, maximize/restore and close into Pixelio's navigation header, with equal button widths and centered control icons.
+- Match the remaining Windows frame to the header background on Windows 11, removing the contrasting strip along the top edge.
+- Preserve native resizing, taskbar minimize/restore and the system menu. The logo and unused header space can move the window; the close control follows the existing app cleanup path.
+- Apply the approved spacious header: 82-pixel height, a larger compact logo, increased logo padding and a wider gap before the tabs. Keep navigation and window controls centered, with adaptive widths for the minimum window size.
+
+**Validation:** native Windows integration checks passed for resize limits, minimize, maximize, restore and close handling. The compact and maximized header and frame colour were reviewed in an isolated preview. All three packaged checks passed and the installer checksum was verified. Installer ready locally; not published or installed.
+
 ## Current behavior and unfinished capabilities
 
 | Area | Current state |
