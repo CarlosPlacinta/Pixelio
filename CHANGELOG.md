@@ -29,6 +29,7 @@ Times below use **Europe/London (BST, UTC+1)**. Time ranges generally run from t
 | 1.2.9 | 11 September 2026 | Exclusive orange NFT badge; filters and valuation unchanged | Published on GitHub |
 | 1.2.10 | 11 September 2026 | Remove redundant interface guidance and legends | Published on GitHub |
 | 1.2.11 | 11 September 2026 | Compact dashboard captions, relocated counts and Média title | Published on GitHub |
+| 1.2.12 | 11 September 2026 | Matching mint-and-gold summary icons | Published on GitHub |
 
 **v1.1.1**, published at **13:12 BST** on 9 September 2026, was the first public update. **v1.2.0** packages the later connection and Scan improvements for the public updater, together with this changelog. Each release provides the executable, portable ZIP, and ZIP checksum. [Version 1.1.1](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.1.1) · [Version 1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
@@ -898,7 +899,7 @@ This release retains the existing local data profile. Updating closes the built-
 - Use consistent mint shapes, gold accents and transparent backgrounds. Downsample the 256-pixel assets to matching 56-pixel slots with smooth edges.
 - Include editable SVG masters and validate all four transparent PNGs in packaged checks. Inventory and room cards share the same icons.
 
-**Validation:** all three packaged checks passed, including verification of all four transparent icons. The native summary cards were visually reviewed. Installer ready locally; not published or installed.
+**Validation:** all three packaged checks passed, including verification of all four transparent icons. The native summary cards were visually reviewed. Published as v1.2.12 on 11 September 2026. All five GitHub asset hashes and sizes matched the verified local package. The real update client detects 1.2.12 from 1.2.11 and returns no update when already on 1.2.12.
 
 ## Current behavior and unfinished capabilities
 
@@ -977,6 +978,7 @@ Implementation details were checked against these development files and their te
 Some older manuals retain instructions from earlier stages, such as opening external G-Earth or authorizing Java. The later entries above describe the current implementation. Files named here refer to the development checkout; the portable distribution does not include all source or the development conversation.
 
 For future entries, append the date, actual version/build, concrete additions or fixes, relevant validation, and publication status. Keep local fixes distinct when a version number is reused, and mark reverted experiments or preview-only work explicitly. This changelog is a maintained document; it is not an automatic change recorder.
+
 
 
 
