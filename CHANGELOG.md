@@ -32,6 +32,7 @@ Times below use **Europe/London (BST, UTC+1)**. Time ranges generally run from t
 | 1.2.12 | 11 September 2026 | Matching mint-and-gold summary icons | Published on GitHub |
 | 1.2.13 | 11 September 2026 | Habbo-inspired summary icons and balanced card spacing | Published on GitHub |
 | 1.2.14 | 11 September 2026 | Integrated spacious window header and aligned controls | Published on GitHub |
+| 1.2.15 | 11 September 2026 | Coherent dropdowns aligned to their fields | Published on GitHub |
 
 **v1.1.1**, published at **13:12 BST** on 9 September 2026, was the first public update. **v1.2.0** packages the later connection and Scan improvements for the public updater, together with this changelog. Each release provides the executable, portable ZIP, and ZIP checksum. [Version 1.1.1](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.1.1) · [Version 1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
@@ -930,7 +931,7 @@ This release retains the existing local data profile. Updating closes the built-
 - Match every menu to its field width and align both edges vertically, without expanding sideways for long labels. Keep menus inside their window, opening above the field when needed, with scrolling for long lists. Widen the furniture filter for readable labels.
 - Preserve selection events, translated options, editable connection ports, keyboard navigation, type-to-find, Escape cancellation and modal-dialog focus/grab restoration.
 
-**Validation:** 22 targeted tests passed, covering dropdown interactions, room history, furniture tags and localization. The native menu and NFT filter selection were visually checked. All three packaged checks passed for the final build, including the aligned menu widths and PT-BR filter-label refinement. The installer checksum was verified. Release prepared for publication.
+**Validation:** 22 targeted tests passed, covering dropdown interactions, room history, furniture tags and localization. The native menu and NFT filter selection were visually checked. All three packaged checks passed for the final build, including the aligned menu widths and PT-BR filter-label refinement. The installer checksum was verified. Published as v1.2.15 on 11 September 2026. All five GitHub asset hashes and sizes matched the final tested package. The real update client detects 1.2.15 from 1.2.14 and returns no update when already on 1.2.15.
 
 ## Current behavior and unfinished capabilities
 
