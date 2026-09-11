@@ -33,6 +33,8 @@ Times below use **Europe/London (BST, UTC+1)**. Time ranges generally run from t
 | 1.2.13 | 11 September 2026 | Habbo-inspired summary icons and balanced card spacing | Published on GitHub |
 | 1.2.14 | 11 September 2026 | Integrated spacious window header and aligned controls | Published on GitHub |
 | 1.2.15 | 11 September 2026 | Coherent dropdowns aligned to their fields | Published on GitHub |
+| 1.2.16 | 11 September 2026 | Smooth navigation tab transitions | Confirmed local build |
+| 1.3.0 | 11 September 2026 | Integrated clothing Try-On and local outfits | Confirmed local build |
 
 **v1.1.1**, published at **13:12 BST** on 9 September 2026, was the first public update. **v1.2.0** packages the later connection and Scan improvements for the public updater, together with this changelog. Each release provides the executable, portable ZIP, and ZIP checksum. [Version 1.1.1](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.1.1) · [Version 1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
@@ -932,6 +934,26 @@ This release retains the existing local data profile. Updating closes the built-
 - Preserve selection events, translated options, editable connection ports, keyboard navigation, type-to-find, Escape cancellation and modal-dialog focus/grab restoration.
 
 **Validation:** 22 targeted tests passed, covering dropdown interactions, room history, furniture tags and localization. The native menu and NFT filter selection were visually checked. All three packaged checks passed for the final build, including the aligned menu widths and PT-BR filter-label refinement. The installer checksum was verified. Published as v1.2.15 on 11 September 2026. All five GitHub asset hashes and sizes matched the final tested package. The real update client detects 1.2.15 from 1.2.14 and returns no update when already on 1.2.15.
+
+### 63. Version 1.2.16 — Animated navigation tabs — 11 September 2026
+
+- Implement the approved tab preview in the native app: one mint underline slides between tabs over 280 ms, with a 180 ms text-colour transition.
+- Keep tab content responsive; rapid selections retarget from the current indicator position. Initial layout and header resizing place the underline immediately at the correct tab bounds.
+- Respect the Windows client-area animation preference and cancel animation callbacks when navigation is hidden or closed.
+- Preserve the spacious header, existing page behaviour, language switching and keyboard activation.
+
+**Validation:** 28 targeted native UI and regression tests passed, including six animation tests covering interrupted motion, resize alignment, translations, reduced motion and cleanup. All three packaged checks passed (folder build, standalone executable, and relocated executable in a path containing spaces and accents). The installer and executable checksums were verified. This version has not been published or installed.
+
+### 64. Version 1.3.0 — Integrated clothing Try-On — 11 September 2026
+
+- Keep the existing wardrobe scanning, valuation, search and exports under My clothing / Minhas roupas. Add Try-On / Experimentar in the same Looks / Visuais tab.
+- Add a category sidebar, searchable paged clothing grid, body types, multiple colour slots, rotation, optional-piece removal and a large real Habbo avatar preview. Use Pixelio's shared controls and English/Brazilian Portuguese translations.
+- Parse official figure definitions and palettes; map clothing products and unlocked sets to wearable categories. Handle multi-part products, gender alternatives, required parts, hidden layers and individual variants from bundled products.
+- Distinguish owned, standard, HC, restricted, unowned and unknown-ownership clothing. Ownership uses the latest captured unlocked wardrobe and never treats a try-on selection as ownership.
+- Load the account's public current appearance when available, retaining an account-specific cached fallback and a usable default. Name, save, load and delete local outfits per account. Keep unsaved drafts isolated and preserve outfits when assigning legacy scans.
+- Keep public metadata, profile and artwork requests on background workers with caching, bounded queues, selection debouncing and stale-response rejection across account changes. Do not send appearance-change packets to Habbo.
+
+**Validation:** 106 focused tests passed across Try-On, wardrobe, clothing valuation, accounts, scanner/concurrency, translations, dropdowns and tab navigation. Composition was exercised against current official data containing 3,267 sets and 1,966 fully mapped products in both body types. Real artwork was inspected in integrated native previews at 1536×970 and 1180×790. All three packaged checks passed (folder build, standalone executable, and relocated executable). Installer and executable checksums were verified. Not published or installed.
 
 ## Current behavior and unfinished capabilities
 
