@@ -8,6 +8,21 @@ Available in Brazilian Portuguese and English for Windows 10/11 x64.
 The changelog records the app's development from the original inventory scanner,
 including features, visual refinements, fixes, experiments, and releases.
 
+## Upcoming version 1.2.8 — not yet downloadable
+
+The next release includes room-capture and scan-speed fixes, persistent price
+estimates, NFT and BC/CA tags and filters, Windows installer support, and update
+notifications while Pixelio is open.
+
+The application changes and isolated installer checks have been tested locally.
+The full Windows package is **blocked**: Windows flagged the existing furniture
+renderer, and that executable is now missing from the build environment. This
+release will not be published to the updater until the dependency issue is
+resolved and the complete package passes its installation checks.
+
+**1.2.0 remains the latest public download.** The new features described in the
+[changelog](CHANGELOG.md) are not yet available through GitHub updates.
+
 ## Download
 
 Download **Pixelio.exe** from the [latest release](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
@@ -44,6 +59,20 @@ O Pixelio avalia inventários, quartos e visuais desbloqueados do Habbo.
 Disponível em PT-BR e inglês para Windows 10/11 x64.
 
 **Versão atual: [1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0)** · **[Histórico completo de mudanças](CHANGELOG.md)**
+
+### Próxima versão 1.2.8 — ainda indisponível para download
+
+A próxima versão reúne correções no scan de quartos e na velocidade das consultas,
+estimativas com preços salvos, tags e filtros NFT e BC/CA, suporte a instalador
+Windows e avisos de atualização enquanto o Pixelio estiver aberto.
+
+As mudanças e os testes isolados do instalador passaram localmente. O pacote
+completo está **bloqueado**: o Windows sinalizou o renderizador de imagens de mobis,
+e esse executável está ausente no ambiente de compilação. A versão só será
+publicada no atualizador após resolver essa dependência e validar o pacote completo.
+
+**A versão 1.2.0 continua sendo o download público mais recente.** As novidades do
+[changelog](CHANGELOG.md) ainda não estão disponíveis pelo atualizador.
 
 Baixe **Pixelio.exe** na [versão mais recente](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 Também é possível extrair **Pixelio-Windows-x64.zip** e abrir Pixelio.exe. O ZIP

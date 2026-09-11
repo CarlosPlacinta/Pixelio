@@ -1,6 +1,6 @@
 # Pixelio — Complete development changelog
 
-**Last updated: 9 September 2026**
+**Last updated: 11 September 2026**
 
 **Order: oldest first, from the original inventory scanner to the current Pixelio app.**
 
@@ -18,6 +18,14 @@ Times below use **Europe/London (BST, UTC+1)**. Time ranges generally run from t
 | 1.1.0 | 9 September 2026 | Startup update popup and in-app download/restart flow | Confirmed local build; no separate public release currently listed |
 | 1.1.1 | 9 September 2026 | Redesigned Connect button; first verified public update | Published on GitHub and installed through the updater |
 | 1.2.0 | 9 September 2026 | Embedded connection engine, one-time connection setup, connection fixes, animated Scan control, and full changelog; developed through successive local builds | Public release package; supersedes 1.1.1 |
+| 1.2.1 | 9 September 2026 | Exclude borrowed Builders Club copies from room valuation | Installed locally; not published |
+| 1.2.2 | 9 September 2026 | Marketplace availability count/filter and complete Builders Club omission | Installed locally; not published |
+| 1.2.3 | 9 September 2026 | Retain every furniture batch in large rooms | Installed locally; not published |
+| 1.2.4 | 9 September 2026 | Prioritize requested scans and gradually recover price pacing | Installed locally; not published |
+| 1.2.5 | 9 September 2026 | Recover connection setup without repeating a successful installation | Installed locally; not published |
+| 1.2.6 | 11 September 2026 | Persistent price estimates, shared observations and artwork history index | Installed locally; not published |
+| 1.2.7 | 11 September 2026 | NFT and BC/CA tags, category filters and ordering | Source complete; packaging blocked |
+| 1.2.8 | 11 September 2026 | Windows installer support and recurring update notifications | Source and isolated installer tested; app packaging blocked |
 
 **v1.1.1**, published at **13:12 BST** on 9 September 2026, was the first public update. **v1.2.0** packages the later connection and Scan improvements for the public updater, together with this changelog. Each release provides the executable, portable ZIP, and ZIP checksum. [Version 1.1.1](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.1.1) · [Version 1.2.0](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
@@ -704,13 +712,157 @@ This release retains the existing local data profile. Updating closes the built-
 
 [GitHub release and downloads](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.2.0).
 
+### 48. Version 1.2.1 — Builders Club valuation exclusion — 9 September 2026
+
+**Fixed**
+
+- Recognize borrowed Builders Club floor and wall copies using Habbo's instance-ID marker, including room baselines and later furniture updates.
+- Keep borrowed copies separate from ordinary owned copies of the same furniture type and owner.
+- Skip their marketplace and LTD price requests, credit/BRL totals, NFT quotes, and missing-price counts.
+- Keep these rows visible with a **Builders Club** badge and an explanation in English and Portuguese.
+- Prevent Restore or custom prices from including borrowed copies in a valuation, including mixed selections and previously stored overrides.
+- Preserve the exclusion in new saved room scans and CSV exports. Ordinary owned copies remain eligible for valuation.
+
+**Validation:** 91 selected regression tests passed, covering floor/wall ID boundaries, incremental updates, shared price requests, owner filtering, credit/BRL/NFT totals, overrides, exports, and the room controls in both languages.
+
+**Existing history:** room scans captured before this fix do not retain the individual item IDs needed to identify borrowed copies. Re-enter the room and scan it again with 1.2.1 to obtain a corrected valuation. Old historical snapshots remain unchanged.
+
+**Release status:** installed in the Desktop copy after restart approval; not published to GitHub. All three packaged checks passed, and 26 saved scans plus three wardrobe records were preserved.
+
+### 49. Version 1.2.2 — Marketplace availability and complete Builders Club omission — 9 September 2026
+
+**Added**
+
+- A visible **Not on marketplace / Fora da Feira Livre** counter, with furniture quantity and distinct type count, for the current inventory or selected room owners.
+- Click the counter to show those rows; click again to return to all furniture. Unpriced, unlisted, non-marketable, and unknown furniture remain in the full list.
+- Separate **Availability unknown** filtering and counts for requests still pending, failed lookups, and unresolved appraisals.
+- Count confirmed zero-offer replies and furniture that cannot be listed without mistaking failed requests or incomplete LTD searches for missing listings.
+- Keep availability separate from custom values and manual valuation exclusions. Unlisted and non-marketable furniture can still receive a custom value.
+- Marketplace availability in CSV exports and compact labels on unavailable rows.
+
+**Changed**
+
+- Completely omit borrowed Builders Club copies from room baselines, incremental changes, scan rows, quantities, owner choices, exports, and pricing work. BC-only changes no longer invalidate an otherwise unchanged room scan.
+- Hide identified BC rows when displaying a scan saved by 1.2.1, without rewriting historical records. This replaces 1.2.1's visible BC exclusion badges.
+- Continue valuing ordinary owned copies of the same furniture types. Room scans from before 1.2.1 still need a fresh capture because their borrowed copies cannot be identified retrospectively.
+
+**Validation:** 114 selected regressions passed across scanning, marketplace availability, Builders Club handling, saved-room views, valuation overrides, currencies, LTDs, wardrobe, localization, and progress. The new counter and labels were reviewed in an offline PT-BR preview at the minimum supported window size.
+
+**Release status:** installed in the Desktop copy after restart approval; not published to GitHub. All three packaged checks passed, and 27 saved scans plus three wardrobe records were preserved.
+
+### 50. Version 1.2.3 — Missing furniture in rooms sent in multiple batches — 9 September 2026
+
+**Fixed**
+
+- Identified a capture bug that predated the Builders Club filter: each new floor or wall furniture batch replaced the previous list, dropping whole groups of items in large rooms.
+- Combine all `Objects` and `Items` batches within the current room by their individual furniture IDs, matching Habbo's own client behavior.
+- Avoid duplicate quantities when batches overlap or repeat, preserve explicit item updates/removals, and clear accumulated items on room boundaries and disconnects.
+- Enforce the supported item limit across the accumulated batches, not just each individual packet.
+- Continue ignoring Builders Club copies and retaining unlisted furniture. All retained batches feed owner grouping, price requests, totals, saved scans, and exports.
+
+**Evidence:** a temporary passive diagnostic observed two floor batches containing 2,379 and 1,184 items, followed by 495 wall items. The first floor batch contained 944 non-BC items, including Guitarra Quebradeira and Guitarra Banzai. The previous implementation discarded that batch. The full captured room contained 1,529 non-BC items. The diagnostic saved counts only, sent no game requests, and was stopped after capture.
+
+**Validation:** 46 selected room, Builders Club, marketplace availability, history, and concurrent-scan tests passed. New regressions cover multiple floor/wall batches, duplicates, room re-entry, updates/removals, cumulative bounds, price queues, totals, saved scans, and CSV exports.
+
+**Live verification after installation:** a fresh scan of room #149974221 captured 1,529 non-BC items across 545 owner/type rows, compared with 585 items across 232 rows before the fix. All 11 guitar types were present, including Guitarra Quebradeira and Guitarra Banzai, and no Builders Club rows remained. This capture check was completed while price requests were still running.
+
+**Existing scans:** re-enter and scan the room again with 1.2.3. Older snapshots cannot recover furniture from discarded packets.
+
+**Release status:** installed in the Desktop copy after restart approval; not published to GitHub. All three packaged checks passed. The installed executable matches the build's SHA-256, and 28 saved scans plus three wardrobe records were preserved.
+
+### 51. Version 1.2.4 — Slow room price checks — 9 September 2026
+
+**Diagnosed**
+
+- The first complete large-room scan checked 545 furniture types and finished in 13 minutes 7 seconds. One price lookup required a retry; all 545 eventually received responses without parse errors.
+- An automatic wardrobe valuation checked another 445 clothing types on the same request lane. That background job competed equally with the room scan.
+- After the timeout, the lane retained its increased one-second gap for the rest of both scans, even after hundreds of successful replies.
+
+**Changed**
+
+- Automatically captured wardrobe valuations now yield while inventory or room scans are active, then resume with their existing progress. An outstanding request is allowed to finish before switching jobs.
+- Explicit wardrobe refreshes retain fair scheduling alongside other requested scans; background captures do not demote a manually started valuation.
+- Keep the 500 ms minimum and one outstanding marketplace request. After a timeout, reduce the slower interval by just 100 ms once at least 30 valid replies and 30 seconds have passed. Each recovery step starts a new observation period; another timeout resets recovery and increases the delay again.
+- Apply recovery across the entire connection so an idle or cancelled job cannot leave every other scan permanently slowed. Keep bounded retries, the timeout cooldown, reply matching, and LTD checks.
+- Show a translated waiting message for automatic wardrobe pricing and include the effective price interval in scan status data for diagnostics.
+
+**Validation:** 135 selected tests passed across price pacing, background/manual scheduling, cancellation/disconnection, LTDs, wardrobe, room batches, Builders Club filtering, marketplace availability, history, accounts, progress, and localization.
+
+**Release status:** installed in the Desktop copy after restart approval, with all three packaged checks passed. The installed executable matches the build's SHA-256, and 29 saved scans plus three wardrobe records were preserved. Not published to GitHub.
+
+### 52. Version 1.2.5 — Repeating connection setup prompt — 9 September 2026
+
+**Observed:** after installing 1.2.4, connection setup reported failure and returned to Set up connection. The helper executable and service registration were present and valid, but the service was stopped. Starting and verifying the existing service succeeded without elevation. The installer failure's underlying Windows error was not captured.
+
+**Fixed**
+
+- Recheck an existing installation and verify its service handshake before requesting another Windows setup prompt. A stale Set up connection button can now recover a working service without reinstalling it.
+- If installation returns an error after registration, attempt the normal service start and verified handshake before reporting setup failure. An unhealthy or unverified service still fails; explicit setup can still repair it.
+- Preserve cancellation and all existing helper integrity, service configuration, process identity, and authorization checks. No changes to the privileged service or its permissions.
+- Retain the scan scheduling and gradual pacing recovery from 1.2.4.
+
+**Validation:** 20 connection/setup tests passed, including stale setup state, failed installer exit with healthy/unhealthy service outcomes, repair, cancellation, and the bundled engine handshake.
+
+**Release status:** installed in the Desktop copy after the user's installation request. All three packaged checks passed, the installed executable matches the build's SHA-256, and 29 saved scans plus three wardrobe records were preserved. Not published to GitHub.
+
+### 53. Version 1.2.6 — Early estimates and a persistent price database — 11 September 2026
+
+**Added**
+
+- A local `market-cache.sqlite3` database shared by inventory, room, and wardrobe scans. The latest confirmed observations supply provisional totals as soon as the furniture list is captured.
+- Each new scan still refreshes earlier prices. Matching observations received after a scan begins can serve concurrent scans of the same item without a duplicate request. Fresh lookups retain the 500 ms floor, timeout recovery, and one outstanding request per connection.
+- Current and average estimate labels, saved-price provenance and timestamps, and progress coverage distinguishing fresh checks, saved observations, and unchecked items. Failed requests keep saved estimates explicitly provisional; confirmed absence of listings replaces the current value with unavailable rather than zero.
+- Append-only successful price observations for future charts. Latest quotes are keyed by hotel and furniture identity, validated against the class name. Custom prices, ownership, exclusions, and Builders Club items never enter the shared market-price records.
+- Exact LTD offer snapshots are saved separately from normal furniture statistics. Early LTD estimates recalculate the nearest listed serial for the units in the new scan, including exact series matching and limited-result disclosure.
+- Successful NFT floor quotes and USD/BRL observations are also recorded for future history. Failed refreshes are not added as new prices; existing NFT/FX display caches remain supported.
+- Valid ordinary price observations from existing saved inventory/room scans and wardrobe valuations are imported once. Old snapshots are unchanged. Historical LTD snapshots without the original offer set are not imported as reusable quotes.
+- Existing icon/full-size image files are reused, with revision, URL, path, and checksum indexed in the database when accessed. Full-size previews are no longer deleted after 256 entries; in-memory image limits remain. Metadata changes invalidate in-memory icons so revised artwork is fetched when needed.
+- CSV exports include price source and observation identity. Price database errors are reported without stopping live scanning or valid image display.
+
+**Validation:** 169 tests passed covering persistence, early totals, shared responses, bounded retries, no-listing results, custom overrides, hotel/type/class isolation, LTD matching, append-only history, localization, images, and existing scanner behavior. Migration against a temporary copy of the user's data recovered 15,505 observations and 2,583 latest item quotes in 0.26 seconds, with database integrity verified and all original saved snapshots unchanged.
+
+**Scope:** history data is collected now; charts and a shared online database are future work. Images are retained as original local PNG files with database references. Items never priced remain unknown until their first successful check; previously saved totals remain estimates until refreshed.
+
+**Release status:** installed in the Desktop copy. All three packaged checks passed, including database persistence. The installed executable matches the build SHA-256. The new database contains 15,505 observations and 2,583 latest quotes; all 31 saved scans and three wardrobe records were preserved. Not published to GitHub.
+
+### 54. Version 1.2.7 — Furniture tags, filters and list ordering — 11 September 2026
+
+- Add an orange NFT identity tag alongside marketplace availability and manual valuation badges. All tags share the same rounded pill, height, padding and typography; the NFT tag uses a subtle tinted fill, muted border and bright orange text to match the existing badge style.
+- Restore borrowed Builders Club rows at the user's request, with a gold BC tag in English and CA in Brazilian Portuguese. Owner selection and saved scans retain these rows; they remain excluded from credit/NFT valuations, price queries and reusable price observations.
+- Clear stale BC prices from older saved views, disable custom valuation controls for BC-only selections and export BC rows with blank prices. Saved source snapshots remain unchanged.
+- Add NFT and Builders Club / Clube do Arquiteto filters alongside Not on marketplace and existing filters. Marketplace absence counts continue to exclude borrowed BC copies.
+- Order regular furniture first, then non-NFT furniture not on the marketplace, then NFTs, then BC/CA. The selected column/direction and owner ordering remain effective within each category.
+- Give names, owners and multiple badges their own space; shorten long badge labels when the window is narrow.
+
+**Scope:** a new room capture is required to recover BC copies omitted by earlier versions. Existing saved scans cannot reconstruct furniture they never retained.
+
+**Validation:** 171 relevant tests passed, including NFT/BC filters in both languages, category ordering in both sort directions, borrowed-only rooms, stale saved prices, room batches, exports, price caching and concurrent scans. The offline layout was inspected with NFT, marketplace and CA badges.
+
+**Release status:** source changes and regression checks completed. Packaging is blocked because Windows rejects the existing inventory-renderer.exe with WinError 225 (virus or potentially unwanted software). No replacement launcher was installed or published.
+
+### 55. Version 1.2.8 — Windows installation and updates while open — 11 September 2026
+
+- Add a per-user Windows installer with Start menu integration, an optional desktop shortcut, Installed Apps registration and an uninstaller. Start/taskbar pinning uses a stable app identity shared by the launcher and shortcuts.
+- Install under LocalAppData/Programs/Pixelio so the existing in-app updater can replace the executable without elevating the app. Saved accounts, scans, preferences and cache remain in their existing profile location. Portable distribution remains supported.
+- Check GitHub releases at launch and every ten minutes while open. Offline or failed checks retry later without duplicate workers. Later dismisses the current version for the session; a newer version can still appear.
+- Show a non-modal new-version popup even during a scan. Download/restart requires the user's action, and active scans must finish or stop before installation. Cancelled download events cannot affect a later popup.
+- Keep installed-version metadata current after in-app updates. A portable copy cannot overwrite the installed application's metadata. Installer/uninstaller detect the new app's running mutex and request that it close instead of terminating scans.
+- Installer compilation requires a matching successful packaged-check manifest and executable hash. Full build checks remain mandatory. The compiler was downloaded from the official project and its publisher signature verified.
+
+**Validation:** 37 recurring notification, cancellation, scan protection, update integrity, launcher, Windows app identity, installer validation and localization regressions passed. An isolated installer test with inert files and a separate identity verified Start shortcut/AppUserModelID, Installed Apps registration, uninstall and preservation of unrelated files. The inert test package is not a Pixelio release.
+
+**Release status:** the full application cannot currently be packaged: Windows previously rejected inventory-renderer.exe with WinError 225 and the file is now absent. The installed Desktop copy was not replaced, security settings were not changed and no release was published.
+
 ## Current behavior and unfinished capabilities
 
 | Area | Current state |
 |---|---|
 | Inventory, room, and wardrobe valuation | Implemented, with separate results and account data |
-| Multiple valuation jobs | Implemented; marketplace work shares the per-connection 500 ms minimum gap |
+| Multiple valuation jobs | Requested scans share the per-connection 500 ms minimum gap; automatic wardrobe pricing yields while room/inventory scans are active |
 | Room owner selection | Implemented; defaults to the connected account’s furniture |
+| Large room capture | 1.2.3 combines all floor/wall furniture batches; older incomplete snapshots need a fresh room scan |
+| Builders Club room copies | Visible with BC/CA tags and a filter in 1.2.7; always unvalued; scans that omitted them require a fresh room capture |
+| Furniture without marketplace listings | Visible with quantity/type counts and a dedicated filter; unresolved availability is counted separately |
 | Saved room history | Implemented; reopens saved valuations, not an automatic room-travel feature |
 | Credit display | Whole credits; precise rates/calculations/exports retained |
 | Average vs. median | Reported average is implemented; a true individual-sale median is not |
@@ -747,6 +899,10 @@ These are historical checkpoints reported during development, not a claim that e
 | Scan size/transparency/sweep refinement | 30 relevant checks plus packaged checks and a native preview |
 | Scan underline removal | Four Scan-control tests, three packaged checks, installed-binary verification, and saved-data comparison |
 | Public 1.2.0 package | 38 selected release regressions and all three rebuilt packaged checks with disposable data |
+| Builders Club exclusion in 1.2.1 | 91 selected room, valuation, currency, LTD, scanner, language, concurrency, and history regressions |
+| Marketplace availability and BC omission in 1.2.2 | 114 selected regressions plus an offline minimum-size PT-BR layout review |
+| Multiple room batches in 1.2.3 | 46 selected regressions and three packaged checks; installed live scan confirmed 1,529 non-BC items and all 11 guitar types |
+| Slow scans in 1.2.4 | 135 selected tests; automatic wardrobe priority and gradual recovery from timeout delays |
 
 ## Evidence and future entries
 
