@@ -901,6 +901,16 @@ This release retains the existing local data profile. Updating closes the built-
 
 **Validation:** all three packaged checks passed, including verification of all four transparent icons. The native summary cards were visually reviewed. Published as v1.2.12 on 11 September 2026. All five GitHub asset hashes and sizes matched the verified local package. The real update client detects 1.2.12 from 1.2.11 and returns no update when already on 1.2.12.
 
+### 60. Version 1.2.13 — Approved Habbo-inspired icon set — 11 September 2026
+
+- Replace the mint summary icons with the user's chosen pixel-art set: gold credit sack, gold bars with a mint average marker, furniture box with teal chair and check badge, and beige price tag with yellow pencil.
+- Preserve the approved artwork and black outlines. Extract real transparent backgrounds directly from the selected source rather than using the image generator's simulated checkerboard output.
+- Preserve the original sprite proportions with 48-pixel icons in compact cards and 56-pixel icons in wider cards. Keep full-resolution transparent masters alongside the approved source in the development workspace.
+- Give all four cards consistent inner padding, a 16-pixel icon-to-text gap, aligned titles and values, and more vertical space for supporting text. Adapt long amounts to the available width and wrap supporting text within each card.
+- Update packaged checks to validate the four new RGBA assets.
+
+**Validation:** all three packaged checks passed, including verification of the four RGBA icons. Cutouts were inspected on light and dark backgrounds, and the native cards were visually reviewed at their actual size. Installer ready locally; not published or installed.
+
 ## Current behavior and unfinished capabilities
 
 | Area | Current state |
@@ -978,6 +988,8 @@ Implementation details were checked against these development files and their te
 Some older manuals retain instructions from earlier stages, such as opening external G-Earth or authorizing Java. The later entries above describe the current implementation. Files named here refer to the development checkout; the portable distribution does not include all source or the development conversation.
 
 For future entries, append the date, actual version/build, concrete additions or fixes, relevant validation, and publication status. Keep local fixes distinct when a version number is reused, and mark reverted experiments or preview-only work explicitly. This changelog is a maintained document; it is not an automatic change recorder.
+
+
 
 
 
