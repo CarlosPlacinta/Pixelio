@@ -2,6 +2,8 @@
 
 Last updated: 11 September 2026
 
+> The Chrome integration was removed from Pixelio 1.3.20. This policy is retained for the earlier experimental extension; current Pixelio releases do not include that extension.
+
 Pixelio — Habbo Connect is an optional browser companion for the Pixelio desktop
 application on Windows. It helps open the installed Habbo Classic client using
 your existing session on https://www.habbo.com.br. Pixelio is independent and is

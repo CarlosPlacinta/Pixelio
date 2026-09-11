@@ -1091,3 +1091,11 @@ The setup screen offers a native card to drag directly onto Chrome's extensions 
 Validation: 100 Python checks, JavaScript behavior checks, native folder-drag registration, bilingual layout checks and packaged Windows checks. The native drag runtime is bundled and verified. Real Chrome installation and a signed-in Habbo launch still need live verification.
 
 A Web Store upload package and privacy policy have been prepared. The assigned store ID pfcippmfdghhdiekeadpgbnkklbhbpml is registered in the native helper. After Google approves the listing, the public store-status file can switch setup to Add to Chrome without another app rebuild. Live validation and Google review remain pending.
+
+## 1.3.20 — Restore the original connection flow (11 September 2026)
+
+Removed the Chrome extension launch alternative at the user's request. Connect account now prepares the built-in connection directly, then waits for the user to enter Habbo Classic manually.
+
+Removed extension onboarding, the launch-method selector, native messaging assets, store routing and native drag support from the application and packages. Rebuilt the connection engine without the Chrome readiness hooks. Old Chrome preferences no longer affect connection behavior. Saved accounts, scans and normal Windows connection setup remain available.
+
+Validation: 65 connection, setup, scanner and account checks passed; the restored screen was checked in English and Portuguese. Packaged checks verify that Chrome modules, extension assets and the drag dependency are absent.
