@@ -1,3 +1,7 @@
+## 1.3.23 — Wired inspection and Watch & Walk
+
+Added a Pixelio Wired tab for furniture-linked Wired discovery, configuration selection and configured delay in seconds. Includes the full Watch & Walk tool window with state/movement triggers, adaptive delay, cooldown, F8 controls and saved room mappings. Room/account transitions clear inspection requests and stop the watch connection. Package includes the watch UI assets. See PIXELIO_WIRED.md.
+
 # Pixelio — Complete development changelog
 
 **Last updated: 12 September 2026**
