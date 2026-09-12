@@ -1,3 +1,7 @@
+## 1.3.24 — Click furniture to fill the Wired ID
+
+Clicking a floor furniture in Habbo Classic now fills the Furniture ID field while the Wired tab is open and its observer is connected. Manual entry remains available. The click only selects an ID; linked-Wired lookup still uses its existing button. Wall items, invalid IDs and stale connection events are ignored.
+
 ## 1.3.23 — Wired inspection and Watch & Walk
 
 Added a Pixelio Wired tab for furniture-linked Wired discovery, configuration selection and configured delay in seconds. Includes the full Watch & Walk tool window with state/movement triggers, adaptive delay, cooldown, F8 controls and saved room mappings. Room/account transitions clear inspection requests and stop the watch connection. Package includes the watch UI assets. See PIXELIO_WIRED.md.

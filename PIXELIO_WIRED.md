@@ -6,7 +6,7 @@ Pixelio 1.3.23 includes a Wired tab and the full Watch & Walk tool.
 
 1. Open Pixelio's Wired tab. Connect the observer. It uses the active account's connection port when available; an external G-Earth port can also be entered.
 2. Re-enter the room to receive a furniture list. The table counts Wired logic boxes, excluding switches, coloured tiles and other supporting furniture.
-3. Enter a furniture instance ID and click Find linked Wireds. The server's configured-in-Wireds list can reveal boxes missing from the room furniture list.
+3. With the Wired tab open and observer connected, click a floor furniture in Habbo Classic to fill its ID automatically (Pixelio 1.3.24 or later). You can also enter an ID manually. Click Find linked Wireds. The server's configured-in-Wireds list can reveal boxes missing from the room furniture list.
 4. Select a Wired and click Read configuration (or double-click its row). This requests its settings and may open the corresponding editor in Habbo. The tool does not save or modify its configuration.
 5. View its selected and secondary furniture IDs and configured delay in seconds. Triggers have no action-delay field; an unqueried effect does not display a false zero.
 6. Export Wired saves the current discovered records and inspection results as JSON.
