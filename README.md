@@ -3,11 +3,11 @@
 Pixelio evaluates Habbo inventories, rooms and unlocked wardrobe items.
 Available in Brazilian Portuguese and English for Windows 10/11 x64.
 
-**Latest version: [1.3.25](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.25)** · **[Full changelog](CHANGELOG.md)**
+**Latest version: [1.3.26](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.26)** · **[Full changelog](CHANGELOG.md)**
 
 ## Install
 
-Download **Pixelio-Setup-1.3.25-x64.exe** from the
+Download **Pixelio-Setup-1.3.26-x64.exe** from the
 [latest release](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 The installer adds Pixelio to **Start** and **Installed apps**, and offers an
 optional desktop shortcut. Right-click Pixelio in Start to pin it to Start or
@@ -24,9 +24,9 @@ Opening Pixelio shows saved results without automatically starting a scan.
 Closing or updating Pixelio ends its built-in Habbo connection; reconnect afterward.
 External G-Earth connections remain available under Connections.
 
-## What's new in 1.3.25
+## What's new in 1.3.26
 
-- Wired automatically uses the selected Pixelio account. Manual ports are under Advanced connection for external G-Earth; Use selected account restores automatic mode.
+- Wired and its integrated Watch & Walk use only the selected account's built-in Pixelio engine. Manual/advanced connection controls and port fields are removed. Watch & Walk follows account changes and reconnects disarmed.
 
 - Click a floor furniture in Habbo Classic to fill the Furniture ID automatically while the Wired tab is open and the observer is connected. Manual entry remains available.
 

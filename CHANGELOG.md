@@ -1,3 +1,7 @@
+## 1.3.26 — Engine-only Wired and Watch & Walk
+
+Removed manual/advanced connection controls from Wired and the integrated Watch & Walk window. Both use only the selected account's authenticated Pixelio engine. External sources are ignored. Watch & Walk follows account changes and reconnects disarmed, with bounded retry attempts.
+
 ## 1.3.25 — Automatic Wired connection
 
 The Wired observer automatically follows the selected connected Pixelio account, including its built-in engine credential. It reconnects after connection changes, clears the previous account's selection and waits when no account is connected. Manual port controls are under Advanced connection for external G-Earth use. Watch & Walk also receives the selected engine credential.

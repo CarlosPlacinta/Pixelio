@@ -4,7 +4,7 @@ Pixelio 1.3.23 includes a Wired tab and the full Watch & Walk tool.
 
 ## Wired inspection
 
-1. Connect your account in Pixelio and open the Wired tab. From version 1.3.25, the observer connects automatically to the selected account and follows account/connection changes. For a separate external G-Earth session, open Advanced connection and enter its port; Use selected account restores automatic mode.
+1. Connect your account through Pixelio's built-in engine and open the Wired tab. The observer automatically follows the selected account. From version 1.3.26, Wired and its integrated Watch & Walk window use only the built-in engine; no manual port or external G-Earth connection is available in these tools.
 2. Re-enter the room to receive a furniture list. The table counts Wired logic boxes, excluding switches, coloured tiles and other supporting furniture.
 3. With the Wired tab open and observer connected, click a floor furniture in Habbo Classic to fill its ID automatically (Pixelio 1.3.24 or later). You can also enter an ID manually. Click Find linked Wireds. The server's configured-in-Wireds list can reveal boxes missing from the room furniture list.
 4. Select a Wired and click Read configuration (or double-click its row). This requests its settings and may open the corresponding editor in Habbo. The tool does not save or modify its configuration.
@@ -23,7 +23,7 @@ Click Watch & Walk in the Wired tab. The full existing tool opens in a Pixelio w
 - Explicit arm/stop controls, Escape and global F8 stop/resume, activity log and timing diagnostics.
 - Saved hotel/room setups, restored disarmed. Existing HabboLiveData room profiles are retained.
 
-Changing the Pixelio account/connection disconnects inspection and stops the tool's current connection. Room changes and connection loss clear or disarm live results. Close the old standalone Watch & Walk if it already owns F8.
+Changing the Pixelio account/connection clears inspection and stops the tool's current connection. The integrated Watch & Walk reconnects to the selected built-in engine disarmed. Room changes and connection loss clear or disarm live results. Close the old standalone Watch & Walk if it already owns F8.
 
 ## Validation
 
