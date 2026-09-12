@@ -1,3 +1,7 @@
+## 1.3.25 — Automatic Wired connection
+
+The Wired observer automatically follows the selected connected Pixelio account, including its built-in engine credential. It reconnects after connection changes, clears the previous account's selection and waits when no account is connected. Manual port controls are under Advanced connection for external G-Earth use. Watch & Walk also receives the selected engine credential.
+
 ## 1.3.24 — Click furniture to fill the Wired ID
 
 Clicking a floor furniture in Habbo Classic now fills the Furniture ID field while the Wired tab is open and its observer is connected. Manual entry remains available. The click only selects an ID; linked-Wired lookup still uses its existing button. Wall items, invalid IDs and stale connection events are ignored.
