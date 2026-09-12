@@ -1106,3 +1106,9 @@ Validation: 65 connection, setup, scanner and account checks passed; the restore
 - Show the conversion rate directly below the current BRL amount only, using the same conversion constant as the totals.
 - Preserve all four summary icons, unpriced counts, NFT values and the USD/BRL controls.
 - Validation: 17 currency and language checks; native layout verified in English and Portuguese at 1180, 1351 and 1536 pixels.
+
+## 1.3.22 — Rounded furniture-panel edges (2026-09-12)
+
+- Round the furniture-list and item-detail panel borders, search field, and custom-price inputs.
+- Keep all existing layout dimensions, row spacing, controls, icons, selection and pricing behavior.
+- Validation: before/after native widget geometry is identical in both languages at 1180 and 1536 pixels; 17 currency and language checks pass.
