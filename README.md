@@ -3,11 +3,11 @@
 Pixelio evaluates Habbo inventories, rooms and unlocked wardrobe items.
 Available in Brazilian Portuguese and English for Windows 10/11 x64.
 
-**Latest version: [1.3.20](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.20)** · **[Full changelog](CHANGELOG.md)**
+**Latest version: [1.3.21](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.21)** · **[Full changelog](CHANGELOG.md)**
 
 ## Install
 
-Download **Pixelio-Setup-1.3.20-x64.exe** from the
+Download **Pixelio-Setup-1.3.21-x64.exe** from the
 [latest release](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 The installer adds Pixelio to **Start** and **Installed apps**, and offers an
 optional desktop shortcut. Right-click Pixelio in Start to pin it to Start or
@@ -24,12 +24,12 @@ Opening Pixelio shows saved results without automatically starting a scan.
 Closing or updating Pixelio ends its built-in Habbo connection; reconnect afterward.
 External G-Earth connections remain available under Connections.
 
-## What's new in 1.3.20
+## What's new in 1.3.21
 
-- Restored the original **Connect account** flow. Pixelio prepares the connection, then you enter Habbo Classic manually.
-- Removed the Chrome extension alternative, installation prompts, launch-method selector and Web Store setup.
-- Existing Chrome launch preferences are ignored. No browser extension is required.
-- Saved accounts, scans and normal Windows connection setup are preserved.
+- Current and average BRL amounts now sit inside their credit-value cards.
+- The current conversion rate appears directly below the current BRL amount only.
+- Removed the two separate BRL blocks and kept all four original summary icons.
+- Unpriced counts, NFT values and currency controls remain available.
 
 Try-On, saved outfits, inventory/room/wardrobe scans, the clearer HC badge and persistent wardrobe cache remain available.
 Ownership reflects the latest captured wardrobe. Standard clothing is available; HC, unowned and unknown-ownership pieces are labelled separately. The current public avatar appearance is used when available, with a cached or default fallback. Uncached artwork requires internet access and some pieces may be unavailable from Habbo's public renderer.
@@ -69,7 +69,7 @@ Disponível em PT-BR e inglês para Windows 10/11 x64.
 
 **Versão atual: [1.3.20](https://github.com/CarlosPlacinta/Pixelio/releases/tag/v1.3.20)** · **[Histórico completo](CHANGELOG.md)**
 
-Baixe **Pixelio-Setup-1.3.20-x64.exe** na
+Baixe **Pixelio-Setup-1.3.21-x64.exe** na
 [versão mais recente](https://github.com/CarlosPlacinta/Pixelio/releases/latest).
 O instalador adiciona o Pixelio ao **Iniciar** e aos **Aplicativos instalados**,
 com atalho opcional na área de trabalho. Clique com o botão direito no Pixelio
@@ -80,11 +80,10 @@ Abra o Pixelio, clique em **Conectar conta**, conclua **Configurar conexão** se
 necessário e entre no **Habbo Classic (AIR)**. Não é necessário instalar
 G-Earth, Java, Go ou Python separadamente.
 
-A versão 1.3.20 restaura o fluxo original: clique em **Conectar conta**, aguarde o
-Pixelio preparar a conexão e entre no Habbo Classic manualmente. A alternativa
-pelo Chrome, os avisos de instalação da extensão e a configuração da Chrome Web
-Store foram removidos. Preferências antigas do Chrome são ignoradas. Seus scans,
-contas e a configuração normal de conexão são preservados.
+A versão 1.3.21 integra os valores em reais aos cartões de **Valor atual** e
+**Média**. A taxa de conversão aparece logo abaixo do valor em reais apenas em
+**Valor atual**. Os dois blocos antigos de BRL foram removidos; os quatro ícones
+originais, valores NFT e controles de moeda continuam disponíveis.
 A posse usa a última captura do guarda-roupa. Roupas padrão estão disponíveis, e peças HC, não possuídas ou sem posse confirmada são identificadas. A aparência pública atual é usada quando disponível, com alternativa salva ou padrão. Imagens ainda não salvas precisam de internet; algumas peças podem estar indisponíveis no renderizador público do Habbo.
 
 O Pixelio inclui instalador Windows, avisos de atualização ao abrir e a cada

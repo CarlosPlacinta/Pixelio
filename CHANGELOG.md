@@ -1,6 +1,6 @@
 # Pixelio — Complete development changelog
 
-**Last updated: 11 September 2026**
+**Last updated: 12 September 2026**
 
 **Order: oldest first, from the original inventory scanner to the current Pixelio app.**
 
@@ -1099,3 +1099,10 @@ Removed the Chrome extension launch alternative at the user's request. Connect a
 Removed extension onboarding, the launch-method selector, native messaging assets, store routing and native drag support from the application and packages. Rebuilt the connection engine without the Chrome readiness hooks. Old Chrome preferences no longer affect connection behavior. Saved accounts, scans and normal Windows connection setup remain available.
 
 Validation: 65 connection, setup, scanner and account checks passed; the restored screen was checked in English and Portuguese. Packaged checks verify that Chrome modules, extension assets and the drag dependency are absent.
+
+## 1.3.21 — BRL values inside the summary cards (2026-09-12)
+
+- Move current and average BRL amounts into their corresponding credit-value cards; remove both standalone BRL blocks.
+- Show the conversion rate directly below the current BRL amount only, using the same conversion constant as the totals.
+- Preserve all four summary icons, unpriced counts, NFT values and the USD/BRL controls.
+- Validation: 17 currency and language checks; native layout verified in English and Portuguese at 1180, 1351 and 1536 pixels.
